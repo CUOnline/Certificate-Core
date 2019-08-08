@@ -1,0 +1,153 @@
+﻿
+#dev-keys-example {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.example {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 95%;
+}
+
+label {
+    font-weight: bold;
+}
+
+body {
+    background-color: #565a5c;
+}
+
+#content {
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+}
+
+#logo {
+    margin: 50px auto;
+    display: block;
+}
+
+.card:nth-child(odd) .card-header {
+    background-color: #F5F5F5;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.btn-cu {
+    display: inline !important;
+    margin: 5px;
+    background-color: #ceb87c;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#loading {
+    display: inline;
+    margin: 5px;
+}
+
+#result-count {
+    margin-top: 10px;
+}
+
+.form-group {
+    margin: 0 1%;
+}
+
+.glyphicon-refresh {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.odd {
+    background-color: #ffffff !important
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+h3 {
+    display: inline;
+}
+
+hr {
+    margin: 10px 0px;
+}
+
+label {
+    margin: 0px 10px;
+}
+
+table {
+    margin-top: 10px;
+}
+
+
+.btn-cu {
+    background-color: #ceb87c;
+    border: 1px solid black;
+    display: block;
+}
+
+    .btn-cu:hover {
+        background-color: #b8a162;
+        border: 1px solid black;
+    }
+
+.float-right {
+    float: right;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    border-bottom: 1px solid #d6d6d6;
+    border-top: 1px solid #d6d6d6;
+    padding: 5px;
+}
+
+th {
+    border-bottom: 1px solid #b3b3b3;
+    font-family: "OpenSansBold", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    padding: 5px;
+}
+
+tr {
+    width: 100%;
+}

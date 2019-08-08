@@ -1,0 +1,19 @@
+﻿@model ConfigErrorViewModel
+@{
+    ViewData["Title"] = "Config Error";
+}
+
+<p>
+    The request could not be completed.  The certificate tool may be misconfigured.  Please ensure the following:
+    <ul>
+        @if (Model.InvalidRequest)
+        {
+            <li>Certificate LTI Tool added with the correct client ID and shared secret</li>
+        }
+        @if (Model.InvalidQuiz)
+        {
+            <li>The specified Quiz ID exists in the current course</li>
+        }
+        <li>The specified required score is a positive nonzero integer</li>
+    </ul>
+</p>

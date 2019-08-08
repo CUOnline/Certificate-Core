@@ -1,0 +1,88 @@
+﻿@model GenerateConfigViewModel
+@{
+    ViewData["Title"] = "Generate Config";
+}
+
+<img id="logo" src="~/images/cu-online.png" />
+<div id="content">
+
+    <h2>Certificate Generator</h2>
+    <a href="https://ucdenver.instructure.com" target="_blank">https://ucdenver.instructure.com</a>
+    <br />
+
+    <hr />
+
+    <div class="row">
+        <form method="post" class="form-inline" style="width: 100%">
+            <div class="form-group">
+                <label>Course ID:</label>
+                <input asp-for="CourseId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Quiz ID:</label>
+                <input asp-for="QuizId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Score Requirement:</label>
+                <input asp-for="ScoreRequirement" class="form-control" />
+            </div>
+            <input type="submit" class="btn btn-sm btn-cu" value="Generate" />
+        </form>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>This page will help you generate the XML configuration needed to add the certificate generator LTI tool to a course.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Quiz ID is the ID of the quiz that needs to be passed in order to receive the certificate. It can be found by navigating to the quiz in Canvas and looking at the rightmost number in the browser's address bar.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <img style="width: 75%;" class="img-fluid" src="~/images/quiz_id_example.png" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3">
+                <p>
+                    Score Requirement is the number of correct answers needed on the specified quiz to receive the certificate.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>After clicking "Generate", you will be redirected to a page with configuration data. Follow these instructions to add your generated config to a course.</p>
+            </div>
+        </div>
+        <div class="row">
+            <ol>
+                <li>Navigate to the course where you wish to add the certificate generator. Click "Settings" on the left-hand sidebar navigation, go to the "Apps" tab, and click the "+ App" button.</li>
+                <img style="width: 75%;" class="img-fluid ml-5" src="~/images/add_app_example.png" />
+                <li class="mt-3">In the App configuration popup, populate the following fields:</li>
+                <ul>
+                    <li>Configuration Type: "By URL"</li>
+                    <li>Name: An identifier of your choosing.</li>
+                    <li>Config URL: The URL of your generated configuration.</li>
+                    <li>Consumer Key & Shared Secret: These can be obtained on the <a href="@Model.CanvasBaseUrl/accounts/10430000000000001/developer_keys" target="_blank">Developer Keys</a> page. Look for a key with a "URI" matching the domain of this page, and use the "ID" and "Key" as the app's "Consumer Key" and "Shared Secret", repectively.</li>
+                    <img class="img-fluid" src="~/images/dev_keys_example.png" />
+                    <li class="mt-3">Click "Submit" and refresh the page. The "Get Certificate" item should appear on course's left-hand navigation menu.</li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+
+
+</div>

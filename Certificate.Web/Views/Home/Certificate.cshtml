@@ -1,0 +1,23 @@
+﻿@model CertificateViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<img id="logo" src="images/cu-online.png" />
+<div id="content">
+
+    @if (Model.Pass)
+    {
+        <p>
+            Congratulations on passing your quiz! <a asp-controller="Home" asp-action="DownloadCertificate" asp-route-fullName="@Model.FullName" asp-route-title="@Model.Title" asp-route-time="@Model.Time">Click here</a> to download your certificate.
+        </p>
+    }
+    else
+    {
+        <p>
+            To receive a certificate, you must complete <a href="@Model.QuizUrl">this quiz</a> with at least @Model.Score correct answer(s).
+            Please allow up to 5 minutes for the system to update after completing your quiz.
+        </p>
+    }
+
+</div>
