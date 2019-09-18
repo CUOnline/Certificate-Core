@@ -48,6 +48,8 @@ namespace Certificate.Web.Controllers
             var userPassedSubmission = submissions.FirstOrDefault(x => x.UserId == userId && x.KeptScore >= scoreRequirement);
 
             var model = new CertificateViewModel();
+            model.Score = scoreRequirement.ToString();
+            model.QuizUrl = $"{appSettings.CanvasBaseUrl}courses/{canvasCourseId}/quizzes/{quizId}";
 
             // If user passed quiz
             if (userPassedSubmission != null)
